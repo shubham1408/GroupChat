@@ -69,7 +69,12 @@ are also autheticated APIs
     mysql -u root -p (for Ubuntu, you might need to run it as sudo mysql -u root -p)
     create database chat;
     grant usage on *.* to myuser@localhost identified by 'mypasswd';
-    grant all privileges on convodb.* to myuser@localhost;
+    grant all privileges on chat.* to myuser@localhost;
+
+ obtain a dump of the database (convodb.sql from backup.sql) and then add it to your local MySQL server  (ensure that you run MySQL from the directory with the dump file):
+
+    use chat;
+    source backup.sql;
 
 ## Running Development Server
 
