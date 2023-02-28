@@ -70,5 +70,5 @@ are also autheticated APIs
    python manage.py test
 
 
-**Note:** Never forget to enable virtual environment (`source convenv/bin/activate`) before running the above commands and use settings accordingly.
+**Note:** Never forget to enable virtual environment before running the above commands and use settings accordingly.
 
