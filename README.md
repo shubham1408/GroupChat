@@ -3,7 +3,7 @@
 
 This is an asignment codebase which includes apis with unit test cases Of GroupChat.
 
-All post APIs are token authenticated and browsable apis and GET apis
+All post APIs are session authenticated and browsable apis and GET apis
 are also autheticated APIs
 
 # URLS FOR APIS (APIS ARE BROWSABLE)
@@ -15,17 +15,28 @@ are also autheticated APIs
   2. Login and Logout apis(Any autheticated user can do it)
       
       ----localhost:port_number(8000)/api/login/----
+
+      curl --location --request POST 'http://127.0.0.1:8000/api/login/' \
+      --header 'Cookie: csrftoken=BYIwzapSzOxASi78VoxadFcDEYhKNOXN; sessionid=vk8mnkf7cyy32okxoxy2pci3oel6h34f' \
+      --form 'username="shubham"' \
+      --form 'password="shubham"'
+
       ----localhost:port_number(8000)/api/logout/----
       ----localhost:port_number(8000)/api/logoutall/----
   
   3. Groups Can be added (By Authenticated user)
-  	  ----localhost:port_number(8000)/api/api/list-group/ To list all groups
-  	  ----localhost:port_number(8000)/api/api/crus-group/ To Create retrieve update and delete all groups
+  	  ----localhost:port_number(8000)/api/list-group/ To list all groups
+  	  
+  	  curl --location --request GET 'http://127.0.0.1:8000/api/list-group/' \
+  	  --header 'Cookie: csrftoken=BYIwzapSzOxASi78VoxadFcDEYhKNOXN; sessionid=vk8mnkf7cyy32okxoxy2pci3oel6h34f'
+
+  	  ----localhost:port_number(8000)/api/crud-group/ To Create, update and delete all groups
+  	  Browsable api so you can post and patch data using DRF framework
 
   4. Group Messages can be sent (By Any User) and liked by user also
 
   	  ----localhost:port_number(8000)/api/list-message/----To list all messages
-  	  ----localhost:port_number(8000)/api/crud-message----To create retreive update and add messages
+  	  ----localhost:port_number(8000)/api/crud-message/----To create, update and add messages
 
 
 # Technology Stack
